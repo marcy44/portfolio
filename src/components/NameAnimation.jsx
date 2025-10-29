@@ -23,7 +23,7 @@ const NameAnimation = ({ onFinish }) => {
       <h1
         className={`
           text-[4rem] sm:text-[5rem] md:text-[6rem] font-light
-          text-[#A29B8E] select-none
+          text-[#f9f7f3] select-none
           transition-all duration-[2000ms] ease-[cubic-bezier(0.45,0,0.55,1)]
           ${step === 0 ? "opacity-80 scale-[1.6] tracking-[1em]" : ""}
           ${step === 1 ? "opacity-100 scale-[1] tracking-[0.5em]" : ""}

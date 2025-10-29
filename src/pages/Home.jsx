@@ -1,23 +1,20 @@
 import { useState } from "react";
-import NameAnimation from "../components/NameAnimation";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import FullWidthNavbar from './../components/Navbar';
+import Hero from "./../components/Hero";
+import NameAnimation from './../components/NameAnimation';
 
-const Home = () => {
-  const [showMain, setShowMain] = useState(false);
+export default function Home() {
+  const [introFinished, setIntroFinished] = useState(false);
 
   return (
-    <div> 
-      {!showMain ? (
-        <NameAnimation onFinish={() => setShowMain(true)} />
-      ) : (
+    <div className={`transition-colors duration-1000 ${introFinished ? "bg-[#f9f7f3]" : "bg-black"} min-h-screen`}>
+      {!introFinished && <NameAnimation onFinish={() => setIntroFinished(true)} />}
+      {introFinished && (
         <>
-          <Navbar />
+          <FullWidthNavbar />
           <Hero />
         </>
       )}
     </div>
   );
-};
-
-export default Home;
+}
